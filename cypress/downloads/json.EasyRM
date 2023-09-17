@@ -1,0 +1,8 @@
+{ "class": "GraphLinksModel",
+  "linkFromPortIdProperty": "fromPort",
+  "linkToPortIdProperty": "toPort",
+  "nodeDataArray": [
+{"category":"Entity","text":"Entity","key":-1,"loc":"-518.4042205810547 -271.4447898864746"},
+{"category":"Attribute","text":"Attribute","key":-2,"loc":"-27.532485961914062 -307.80842208862305"}
+],
+  "linkDataArray": []}

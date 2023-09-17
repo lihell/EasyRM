@@ -1,0 +1,33 @@
+name: Upload To Azure Blob Storage
+on:
+  push:
+    branches:
+      - main
+      
+jobs:
+  upload:
+    name: upload
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: bacongobbler/azure-blob-storage-upload@main
+        with:
+          source_dir: 'ProjectCode'
+          container_name: '$web'
+          connection_string: ${{ secrets.ConnectionString }}
+          # WARNING: this will overwrite existing blobs in your blob storage
+          overwrite: 'true'
+  cypress_test:
+    name: Cypress-Tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Run Cypress Tests
+        uses: cypress-io/github-action@v5
+        with:
+          browser: chrome
+          spec: cypress/e2e/AutoTestAfterDeployment.cy.js
+          
+          
+  
+          
