@@ -353,8 +353,11 @@ function init() {
                     {category: "Entity", text: "Entity"},
                     {category: "Attribute", text: "Attribute"},
                     {category: "Relation", text: "Relation"},
-                ])
+                ]),
+
+
             });
+
     //endregion
 
     // This is a re-implementation of the default animation, except it fades in from downwards, instead of upwards.

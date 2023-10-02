@@ -46,7 +46,7 @@
             crossorigin="anonymous"></script>
 </head>
 <body onload="myPopup()">
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg navbar-dark">
     <a class="navbar-brand" href="#">
         <img src="logo.svg" width="135" height="35" class="d-inline-block align-top" alt="">
     </a>
@@ -93,7 +93,7 @@
                 <h2 style="text-align: center">Your SQL Code</h2>
             </div>
             <div class="col">
-                <button id="close" onclick="myPopup4SQL()">&times;</button>
+                <button class="close" onclick="myPopup4SQL()">&times;</button>
             </div>
         </div>
         <div class="row">
@@ -108,13 +108,18 @@
                 </div>
             </div>
         </div>
+        <div class="row">
+            <div class="col">
+                <button id="export">Export SQL</button>
+            </div>
+        </div>
     </div>
 
 
 </div>
 
 <div aria-labelledby="helpPopup" id="helpPopup" style="overflow:scroll" class="isNotVisible h50">
-    <button id="close" onclick="myPopup4Help()">&times;</button>
+    <button class="close" onclick="myPopup4Help()">&times;</button>
     <h2>You need help?</h2>
     <p><br>
         To create an ERM just place your Entities, Relations and Attributes via Drag'n'Drop into the Diagram.
@@ -169,7 +174,7 @@
 </div>
 
 <div id="popup" class="isNotVisible">
-    <button id="close" onclick="myPopup()">&times;</button>
+    <button class="close" onclick="myPopup()">&times;</button>
     <h2>Welcome to EasyRM!</h2>
     <p>
         EasyRM is a free Software for creating ERM's. <br>
@@ -181,10 +186,17 @@
 </div>
 
 
-<div id="diagramBody" class="diagramIsVisible" style="width: 100%; justify-content: space-between">
-    <div id="myPaletteDiv" style="width: 180px; margin-right: 2px; background-color: #ffffff;"></div>
+<div id="diagramBody" class="diagramIsVisible" style="width: 100%; justify-content: space-between; height: 89vh; background-color: #F1F1F1">
+    <div id="myPaletteContainer" style="width: 20vw; height: 100%; display: flex; align-items: center">
+        <div id="myPaletteDiv" style="width: 100%; height: 75%; border-right: 2px solid; border-image: linear-gradient(to bottom, #F1F1F1, black, #F1F1F1) 1 100%"></div>
+    </div>
+    <div id="myDiagramContainer" style="width: 95vw; height: 100%; display: flex; align-content: center; align-items: center; flex-wrap: wrap; justify-content: center">
+        <div class="container-fluid" id="myDiagramDiv" style="width: 90%; height: 88%; background-color: white;border-radius: 20px"></div>
+    </div>
+    <!-- <div id="myPaletteDiv" style="width: 20vw; margin-right: 2px; background-color: #ffffff; border-right: black;"></div>
     <div class="container-fluid" id="myDiagramDiv"
-         style="flex-grow: 1; height: 750px; background-color: #ffffff;"></div>
+         style="flex-grow: 1; height: 750px; background-color: #ffffff"></div>
+    </div> -->
 
 </div>
 <textarea id="mySavedModel" style="display: none">
