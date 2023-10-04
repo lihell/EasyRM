@@ -16,6 +16,38 @@
   background-color: #20283E !important;
 }
 
+.close  {
+  color: white;
+}
+
+.navbar-nav {
+  align-items: center;
+}
+
+.navbar-nav li a {
+  color: white !important;
+}
+
+.navbar-nav  li .dropdown-menu .dropdown-item {
+  color: #20283E !important;
+  transition: background-color 0.5s;
+}
+
+.navbar-nav  li .dropdown-menu .dropdown-item:hover {
+  background-color: aliceblue;
+  cursor: pointer;
+}
+
+.navbar-nav li.nav-item {
+  transition: border-bottom 1s;
+}
+
+.navbar-nav li.nav-item:hover {
+  border-bottom: solid white 1px;
+}
+
+
+
 #popup{
   background-color: #343a40;
   width: 450px;
