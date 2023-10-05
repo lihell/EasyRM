@@ -101,6 +101,8 @@ function createJsonArrayFromModels() {
                 }
             })
 
+            table.name = table.name.replaceAll(' ', '_')
+            table.name = table.name.replaceAll('\n', '_')
 
             if (node.category === "Entity") {
                 columnToAdd.name = table.name + "_ID"
