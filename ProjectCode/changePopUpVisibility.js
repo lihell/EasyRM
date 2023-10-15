@@ -42,3 +42,12 @@ function myPopup4SQL() {
     element.classList.toggle("diagramIsVisible");
     element.classList.toggle("isNotVisible")
 }
+
+function myPopup4Filename() {
+    var element = document.getElementById("nameFilePopup");
+    element.classList.toggle("isVisible");
+    element.classList.toggle("isNotVisible")
+    var element = document.getElementById("sqlPopup");
+    element.classList.toggle("isVisible");
+    element.classList.toggle("isNotVisible")
+}

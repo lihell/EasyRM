@@ -16,9 +16,6 @@
   background-color: #20283E !important;
 }
 
-.close  {
-  color: white;
-}
 
 .navbar-nav {
   align-items: center;
@@ -46,7 +43,9 @@
   border-bottom: solid white 1px;
 }
 
-
+#exportSQLCol {
+  margin-top: 30px;
+}
 
 #popup{
   background-color: #343a40;
@@ -98,11 +97,13 @@
   margin:  0 0 20px auto;
   background-color: transparent;
   font-size: 30px;
-  color: #007bff;
+  color: white !important;
   border: none;
   outline: none;
   cursor: pointer;
 }
+
+
 #popup p{
   font-size: 14px;
   text-align: justify;
@@ -126,4 +127,26 @@ a{
 }
 code{
   text-align: start;
+}
+
+#nameFilePopup {
+  background-color: #343a40;
+  width: 40vw;
+  padding: 20px 30px;
+  position: absolute;
+  transform: translate(-50%,-50%);
+  left: 50%;
+  top: 50%;
+  border-radius: 8px;
+  font-family: "Poppins",sans-serif;
+  color: #ffffff;
+}
+
+#overlay {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

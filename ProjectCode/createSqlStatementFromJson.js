@@ -37,5 +37,5 @@ function createSqlStatementFromJson() {
     myPopup4SQL()
     //throwGenericAlert(sqlStatement)
     console.log(tableHTML)
-    return
+    return sqlStatement
 }

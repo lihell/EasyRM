@@ -31,6 +31,7 @@
     <script type="text/javascript" src="printDiagramToPNG.js"></script>
     <script type="text/javascript" src="changePopUpVisibility.js"></script>
     <script type="text/javascript" src="printDiagramToPDF.js"></script>
+    <script type="text/javascript" src="printSQLStatementToTextFile.js"></script>
     <script type="text/javascript" src="./init.js"></script>
 
 
@@ -109,13 +110,28 @@
             </div>
         </div>
         <div class="row">
-            <div class="col">
-                <button id="export">Export SQL</button>
+            <div class="col" id="exportSQLCol" onclick="myPopup4Filename()">
+                <button id="export" class="btn btn-primary">Export SQL</button>
             </div>
         </div>
     </div>
 
 
+</div>
+
+<div id="nameFilePopup" class="isNotVisible">
+    <div class="col">
+        <button class="close" onclick="myPopup4Filename()">&times;</button>
+    </div>
+    <h2>Name the File you want to download</h2>
+    <form>
+        <div class="form-group">
+            <label for="fileName">File Name</label>
+            <input type="text" class="form-control" id="fileName" placeholder="Enter file name" aria-describedby="helpFileType">
+            <small id="helpFileType" class="form-text text-muted">Don't write the file ending</small>
+        </div>
+    </form>
+    <button class="btn btn-primary" onclick="printSQLStatementToTextFile()">Submit</button>
 </div>
 
 <div aria-labelledby="helpPopup" id="helpPopup" style="overflow:scroll" class="isNotVisible h50">
@@ -186,12 +202,13 @@
 </div>
 
 
+
 <div id="diagramBody" class="diagramIsVisible" style="width: 100%; justify-content: space-between; height: 89vh; background-color: #F1F1F1">
     <div id="myPaletteContainer" style="width: 20vw; height: 100%; display: flex; align-items: center">
-        <div id="myPaletteDiv" style="width: 100%; height: 75%; border-right: 2px solid; border-image: linear-gradient(to bottom, #F1F1F1, black, #F1F1F1) 1 100%"></div>
+        <div id="myPaletteDiv" style="width: 100%; height: 100%"></div>
     </div>
     <div id="myDiagramContainer" style="width: 95vw; height: 100%; display: flex; align-content: center; align-items: center; flex-wrap: wrap; justify-content: center">
-        <div class="container-fluid" id="myDiagramDiv" style="width: 90%; height: 88%; background-color: white;border-radius: 20px"></div>
+        <div class="container-fluid" id="myDiagramDiv" style="height: 88%; background-color: white;border-radius: 20px; margin-right: 5vw"></div>
     </div>
     <!-- <div id="myPaletteDiv" style="width: 20vw; margin-right: 2px; background-color: #ffffff; border-right: black;"></div>
     <div class="container-fluid" id="myDiagramDiv"
