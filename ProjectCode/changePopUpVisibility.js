@@ -21,6 +21,9 @@ function myPopup() {
     var element = document.getElementById("popup");
     element.classList.toggle("isVisible");
     element.classList.toggle("isNotVisible")
+    var element = document.getElementById("containerBackgroundForPopup");
+    element.classList.toggle("isVisible");
+    element.classList.toggle("isNotVisible")
     var element = document.getElementById("diagramBody");
     element.classList.toggle("diagramIsVisible");
     element.classList.toggle("isNotVisible")
@@ -30,12 +33,18 @@ function myPopup() {
     var element = document.getElementById("helpPopup");
     element.classList.toggle("isVisible");
     element.classList.toggle("isNotVisible")
+      var element = document.getElementById("containerBackgroundForPopup");
+      element.classList.toggle("isVisible");
+      element.classList.toggle("isNotVisible")
     var element = document.getElementById("diagramBody");
     element.classList.toggle("diagramIsVisible");
     element.classList.toggle("isNotVisible")
   }
 function myPopup4SQL() {
     var element = document.getElementById("sqlPopup");
+    element.classList.toggle("isVisible");
+    element.classList.toggle("isNotVisible")
+    var element = document.getElementById("containerBackgroundForPopup");
     element.classList.toggle("isVisible");
     element.classList.toggle("isNotVisible")
     var element = document.getElementById("diagramBody");
@@ -45,6 +54,9 @@ function myPopup4SQL() {
 
 function myPopup4Filename() {
     var element = document.getElementById("nameFilePopup");
+    element.classList.toggle("isVisible");
+    element.classList.toggle("isNotVisible")
+    var element = document.getElementById("containerBackgroundForPopup");
     element.classList.toggle("isVisible");
     element.classList.toggle("isNotVisible")
     var element = document.getElementById("sqlPopup");

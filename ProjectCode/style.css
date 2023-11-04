@@ -58,6 +58,7 @@
   border-radius: 8px;
   font-family: "Poppins",sans-serif;
   text-align: center;
+  z-index: 2;
 }
 
 #helpPopup{
@@ -78,6 +79,7 @@
   font-family: "Poppins",sans-serif;
   text-align: center;
   color: #ffffff;
+  z-index: 2;
 }
 #sqlPopup{
   background-color: #343a40;
@@ -90,6 +92,7 @@
   border-radius: 8px;
   font-family: "Poppins",sans-serif;
   color: #ffffff;
+  z-index: 2;
 }
 
 .close{
@@ -140,6 +143,7 @@ code{
   border-radius: 8px;
   font-family: "Poppins",sans-serif;
   color: #ffffff;
+  z-index: 2;
 }
 
 #overlay {
@@ -149,4 +153,13 @@ code{
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+#containerBackgroundForPopup {
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  background-color: #343a40;
+  opacity: 0.8;
+  z-index: 1;
 }

@@ -31,6 +31,7 @@
     <script type="text/javascript" src="printDiagramToPNG.js"></script>
     <script type="text/javascript" src="changePopUpVisibility.js"></script>
     <script type="text/javascript" src="printDiagramToPDF.js"></script>
+    <script type="text/javascript" src="openSQLPopupWithSQLStatement.js"></script>
     <script type="text/javascript" src="printSQLStatementToTextFile.js"></script>
     <script type="text/javascript" src="./init.js"></script>
 
@@ -81,11 +82,15 @@
 
             </li>
         </ul>
-        <button style="margin-right: 0; margin-left: auto" type="button" onclick="createSqlStatementFromJson()"
+        <button style="margin-right: 0; margin-left: auto" type="button" onclick="openSQLPopupWithSQLStatement()"
                 class="btn btn-primary"><i class="bi bi-magic"></i> Convert to SQL
         </button>
     </div>
 </nav>
+
+<div id="containerBackgroundForPopup" class="isNotVisible">
+
+</div>
 
 <div style="max-height: 600px; width: 1200px" aria-labelledby="sqlPopup" id="sqlPopup" class="isNotVisible">
     <div class="container">
@@ -115,8 +120,6 @@
             </div>
         </div>
     </div>
-
-
 </div>
 
 <div id="nameFilePopup" class="isNotVisible">
