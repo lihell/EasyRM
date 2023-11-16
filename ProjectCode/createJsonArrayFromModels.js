@@ -91,8 +91,19 @@ function createJsonArrayFromModels() {
                 if (myLink != 0) {
                     tempNode = nodes.find(node => (node.key === myLink && node.category === "Attribute"))
                     if (tempNode !== undefined) {
-                        columnToAdd.name = tempNode.text
-                        columnToAdd.dataType = "varchar(255)"
+                        //Splitten der Attribute, um den Datentyp zu extrahieren
+                        splittedText = tempNode.text.split(/:(.+)/);
+                        attrName = splittedText[0];
+                        attrDataType = splittedText[1];
+                        // Überprüfen, ob der zweite Teil einen SQL-Datentyp repräsentiert
+                        dataTypeRegex = /\b(?:int|integer|tinyint|smallint|mediumint|bigint|decimal|numeric|float|double|real|bit|char|varchar|text|nchar|nvarchar|binary|varbinary|image|date|time|datetime|timestamp|year)\b(\(\d+\))?/i;
+                        isSQLDataType = dataTypeRegex.test(attrDataType);
+                        if (!isSQLDataType) {
+                            attrDataType = "varchar(255)"
+                        }
+
+                        columnToAdd.name = attrName
+                        columnToAdd.dataType = attrDataType
                         table.columns.push({...columnToAdd})
                         //console.log(columnToAdd)
                     }
