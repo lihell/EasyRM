@@ -318,6 +318,8 @@ function init() {
     //endregion
 
 
+
+
     //TRY CATCH FÜR LABELERKENNUNG
 
 
@@ -336,9 +338,31 @@ function init() {
         //console.log(e)
     }
 
+    function centerNodesVertically() {
+        // Get the viewport bounds
+        var viewBnds = myPalette.viewportBounds;
+
+        // Calculate the total height of the nodes
+        var totalHeight = 0;
+        myPalette.nodes.each(function(node) {
+            totalHeight += node.actualBounds.height;
+        });
+
+        // Calculate the offset needed to center the nodes
+        var yOffset = (viewBnds.height - totalHeight) / 2;
+
+        // Set the new locations for the nodes
+        var currentY = viewBnds.top;
+        myPalette.nodes.each(function(node) {
+            node.location = new go.Point(node.location.x, currentY + yOffset);
+            currentY += node.actualBounds.height;
+        });
+    }
+
     // temporary links used by LinkingTool and RelinkingTool are also orthogonal:
     myDiagram.toolManager.linkingTool.temporaryLink.routing = go.Link.Normal;
     myDiagram.toolManager.relinkingTool.temporaryLink.routing = go.Link.Normal;
+
 
     loadStandardDiagram();  // loadStandardDiagram an initial diagram from some JSON text
 
@@ -350,11 +374,16 @@ function init() {
                 "InitialAnimationStarting": animateFadeDown,
                 nodeTemplateMap: myDiagram.nodeTemplateMap,
                 model: new go.GraphLinksModel([ //Definieren der möglichen Elemente in der Palette
-                    {category: "Entity", text: "Entity"},
-                    {category: "Attribute", text: "Attribute"},
-                    {category: "Relation", text: "Relation"},
-                ])
+                    {category: "Entity", text: "Entity", loc: "10 100"},
+                    {category: "Attribute", text: "Attribute", loc: "10 200"},
+                    {category: "Relation", text: "Relation", loc: "10 300"},
+                ]),
             });
+
+
+
+
+
     //endregion
 
     // This is a re-implementation of the default animation, except it fades in from downwards, instead of upwards.

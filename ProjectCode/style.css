@@ -1,7 +1,5 @@
 /*! tailwindcss v2.0.3 | MIT License | https://tailwindcss.com */ /*! modern-normalize v1.0.0 | MIT License | https://github.com/sindresorhus/modern-normalize */
 
-
-
 .isVisible{
   display: block;
 }
@@ -12,6 +10,41 @@
 
 .isNotVisible{
   display: none;
+}
+
+.navbar {
+  background-color: #20283E !important;
+}
+
+
+.navbar-nav {
+  align-items: center;
+}
+
+.navbar-nav li a {
+  color: white !important;
+}
+
+.navbar-nav  li .dropdown-menu .dropdown-item {
+  color: #20283E !important;
+  transition: background-color 0.5s;
+}
+
+.navbar-nav  li .dropdown-menu .dropdown-item:hover {
+  background-color: aliceblue;
+  cursor: pointer;
+}
+
+.navbar-nav li.nav-item {
+  transition: border-bottom 1s;
+}
+
+.navbar-nav li.nav-item:hover {
+  border-bottom: solid white 1px;
+}
+
+#exportSQLCol {
+  margin-top: 30px;
 }
 
 #popup{
@@ -25,6 +58,7 @@
   border-radius: 8px;
   font-family: "Poppins",sans-serif;
   text-align: center;
+  z-index: 2;
 }
 
 #helpPopup{
@@ -45,6 +79,7 @@
   font-family: "Poppins",sans-serif;
   text-align: center;
   color: #ffffff;
+  z-index: 2;
 }
 #sqlPopup{
   background-color: #343a40;
@@ -57,18 +92,21 @@
   border-radius: 8px;
   font-family: "Poppins",sans-serif;
   color: #ffffff;
+  z-index: 2;
 }
 
-#close{
+.close{
   display: block;
   margin:  0 0 20px auto;
   background-color: transparent;
   font-size: 30px;
-  color: #007bff;
+  color: white !important;
   border: none;
   outline: none;
   cursor: pointer;
 }
+
+
 #popup p{
   font-size: 14px;
   text-align: justify;
@@ -92,4 +130,36 @@ a{
 }
 code{
   text-align: start;
+}
+
+#nameFilePopup {
+  background-color: #343a40;
+  width: 40vw;
+  padding: 20px 30px;
+  position: absolute;
+  transform: translate(-50%,-50%);
+  left: 50%;
+  top: 50%;
+  border-radius: 8px;
+  font-family: "Poppins",sans-serif;
+  color: #ffffff;
+  z-index: 2;
+}
+
+#overlay {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#containerBackgroundForPopup {
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  background-color: #343a40;
+  opacity: 0.8;
+  z-index: 1;
 }
