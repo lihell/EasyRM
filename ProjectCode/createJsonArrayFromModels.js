@@ -95,6 +95,7 @@ function createJsonArrayFromModels() {
                         splittedText = tempNode.text.split(/:(.+)/);
                         attrName = splittedText[0];
                         attrDataType = splittedText[1];
+
                         // Überprüfen, ob der zweite Teil einen SQL-Datentyp repräsentiert
                         dataTypeRegex = /\b(?:int|integer|tinyint|smallint|mediumint|bigint|decimal|numeric|float|double|real|bit|char|varchar|text|nchar|nvarchar|binary|varbinary|image|date|time|datetime|timestamp|year)\b(\(\d+\))?/i;
                         isSQLDataType = dataTypeRegex.test(attrDataType);
@@ -102,9 +103,23 @@ function createJsonArrayFromModels() {
                             attrDataType = "varchar(255)"
                         }
 
+                        //PrimaryKey check
+                        isPrimary = false;
+                        if (attrName.startsWith('!')) {
+                            attrName = attrName.substring(1);
+                            isPrimary = true;
+                        }
+
                         columnToAdd.name = attrName
                         columnToAdd.dataType = attrDataType
                         table.columns.push({...columnToAdd})
+
+                        if (isPrimary){
+                            columnToAdd.name = "PRIMARY KEY";
+                            columnToAdd.dataType = "("+attrName+")";
+                            table.columns.push({...columnToAdd});
+                        }
+
                         //console.log(columnToAdd)
                     }
                     //nodes = nodes.filter(node => node.key != myLink)
