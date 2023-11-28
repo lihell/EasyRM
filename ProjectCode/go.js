@@ -1,6 +1,7 @@
 /*
  * GoJS v2.2.3 JavaScript Library for HTML Diagrams, https://gojs.net
- * GoJS and Northwoods Software are registered trademarks of Northwoods Software Corporation, https://www.nwoods.com.
+ * GoJS and
+ * Northwoods Software are registered trademarks of Northwoods Software Corporation, https://www.nwoods.com.
  * Copyright (C) 1998-2022 by Northwoods Software Corporation.  All Rights Reserved.
  * THIS SOFTWARE IS LICENSED.  THE LICENSE AGREEMENT IS AT: https://gojs.net/2.2.3/license.html.
  * DO NOT MODIFY THIS FILE.  DO NOT DISTRIBUTE A MODIFIED COPY OF THE CONTENTS OF THIS FILE.
