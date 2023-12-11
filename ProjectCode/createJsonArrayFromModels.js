@@ -11,6 +11,7 @@ function createJsonArrayFromModels() {
         linkOneMult: "",
         linkOneConnKey: "",
         linkTwo: "",
+
         linkTwoMult: "",
         linkTwoConnKey: "",
     }
@@ -88,7 +89,7 @@ function createJsonArrayFromModels() {
                 if (link.from === node.key) myLink = link.to
                 if (link.to === node.key) myLink = link.from
 
-                if (myLink != 0) {
+                if (myLink !== 0) {
                     tempNode = nodes.find(node => (node.key === myLink && node.category === "Attribute"))
                     if (tempNode !== undefined) {
                         //Splitten der Attribute, um den Datentyp zu extrahieren

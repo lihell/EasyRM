@@ -93,7 +93,7 @@ function init() {
             // the main object is a Panel that surrounds a TextBlock with a rectangular Shape
             $(go.Panel, "Auto",
                 $(go.Shape, "Rectangle",
-                    {fill: "#282c34", stroke: "#00A9C9", strokeWidth: 3.5},
+                    {fill: "#20283E", stroke: "#00A9C9", strokeWidth: 3.5},
                     new go.Binding("figure", "figure")),
                 $(go.TextBlock, textStyle(),
                     {
@@ -124,7 +124,7 @@ function init() {
             // Hauptobjekt ist ein Panel, dass ein beschriftetes Rechteck umschliesst
             $(go.Panel, "Auto",
                 $(go.Shape, "Rectangle",
-                    {desiredSize: new go.Size(120, 60), fill: "#282c34", stroke: "#00A9C9", strokeWidth: 3.5},
+                    {desiredSize: new go.Size(120, 60), fill: "#20283E", stroke: "#00A9C9", strokeWidth: 3.5},
                     new go.Binding("figure", "figure")),
                 $(go.TextBlock, textStyle(),
                     {
@@ -207,7 +207,7 @@ function init() {
                     {
                         portId: "",  // now the Shape is the port, zzzCxcommand the whole Node
                         desiredSize: new go.Size(120, 60),
-                        fill: "#282c34",
+                        fill: "#20283E",
                         stroke: "#00A9C9",
                         strokeWidth: 3.5
                     },
@@ -268,8 +268,8 @@ function init() {
                     {
                         portId: "",  // now the Shape is the port, zzzCxcommand the whole Node
                         desiredSize: new go.Size(120, 60),
-                        fill: "#282c34",
-                        stroke: "#09d3ac",
+                        fill: "#20283E",
+                        stroke: "#00A9C9",
                         strokeWidth: 3.5
                     }),
                 $(go.TextBlock, textStyle(),
@@ -320,7 +320,7 @@ function init() {
 
 
 
-    //TRY CATCH FÜR LABELERKENNUNG
+    //TRY CATCH FÜR LABELERKENNUNG ?????
 
 
     // Make link labels visible if coming out of a "conditional" node.
@@ -337,7 +337,8 @@ function init() {
         }
         //console.log(e)
     }
-
+    // unused function? -> can this deleted
+    /*
     function centerNodesVertically() {
         // Get the viewport bounds
         var viewBnds = myPalette.viewportBounds;
@@ -358,7 +359,7 @@ function init() {
             currentY += node.actualBounds.height;
         });
     }
-
+    */
     // temporary links used by LinkingTool and RelinkingTool are also orthogonal:
     myDiagram.toolManager.linkingTool.temporaryLink.routing = go.Link.Normal;
     myDiagram.toolManager.relinkingTool.temporaryLink.routing = go.Link.Normal;
@@ -403,6 +404,7 @@ function init() {
 //kann evt weg
 var tempBuff
 
+// unused -> kann weg?
 function tempBuffer(myBuff) {
     console.log(myBuff)
     if (myBuff) {

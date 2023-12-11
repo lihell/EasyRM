@@ -54,3 +54,11 @@ describe('finish', () => {
     cy.get('.col > #close').should('not.be.disabled').click()
   })
 })
+
+describe('erm to sql', () => {
+  it('convert', () => {
+    cy.get('.btn').click()
+    cy.get('.btn').click()
+    cy.get('WW')
+  })
+})

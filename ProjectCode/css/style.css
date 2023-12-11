@@ -48,7 +48,7 @@
 }
 
 #popup{
-  background-color: #343a40;
+  background-color: #20283E;
   width: 450px;
   padding: 30px 40px;
   position: absolute;
@@ -69,7 +69,7 @@
   margin-top: 30px;
   margin-left: 100px;
   margin-right: 100px;
-  background-color: #343a40;
+  background-color: #20283E;
   min-height: 600px;
   position: absolute;
   transform: translate(-50%,-50%);
@@ -82,7 +82,7 @@
   z-index: 2;
 }
 #sqlPopup{
-  background-color: #343a40;
+  background-color: #20283E;
   width: 600px;
   padding: 30px 40px;
   position: absolute;
@@ -133,7 +133,7 @@ code{
 }
 
 #nameFilePopup {
-  background-color: #343a40;
+  background-color: #20283E;
   width: 40vw;
   padding: 20px 30px;
   position: absolute;
@@ -159,6 +159,7 @@ code{
   width: 100vw;
   height: 100vh;
   top: 0;
+  position: absolute;
   background-color: #343a40;
   opacity: 0.8;
   z-index: 1;
