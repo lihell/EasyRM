@@ -4,15 +4,35 @@ function openSQLPopupWithSQLStatement() {
     let sqlStatement = createSqlStatementFromJson();
     let tableHTML = ""
     tables.forEach(table => {
+
         tableHTML += "<b>" + table.name + "</b><table><tr>"
+        let primary = "";
         table.columns.forEach(column =>{
-            tableHTML += "<td style='border: 1px solid white;'>" + column.name + "</td>"
+            if (column.name === "PRIMARY KEY"){
+               primary = column.dataType;
+            }
+        })
+
+        table.columns.forEach(column =>{
+            if (column.name !== "PRIMARY KEY"){
+                if (("("+column.name+")") === primary){
+                    tableHTML += "<td style='border: 1px solid white;'>!" + column.name + "</td>"
+                }else {
+                    tableHTML += "<td style='border: 1px solid white;'>" + column.name + "</td>"
+                }
+
+            }
+
         })
         tableHTML += "</tr><tr>"
         table.columns.forEach(column =>{
-            tableHTML += "<td style='border: 1px solid white;'>" + column.dataType + "</td>"
+            if (column.name !== "PRIMARY KEY"){
+                tableHTML += "<td style='border: 1px solid white;'>" + column.dataType + "</td>"
+            }
         })
         tableHTML += "</tr></table>"
+
+
     })
 
     //document.getElementById("SQLText").textContent = sqlStatement

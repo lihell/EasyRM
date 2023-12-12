@@ -237,6 +237,11 @@ function init() {
         console.log(obj)
 
     }
+    function validateAttr(textblock, oldstr, newstr) {
+        var pattern = new RegExp("^([!]{1}[A-Za-z0-9#$_]{1,20}){1}$|^([A-Za-z0-9#$_]{1,20}){1}$|^([A-Za-z0-9#$_]{1,20}:{1}[A-Za-z0-9()]{1,20}){1}$|^([!]{1}[A-Za-z0-9#$_]{1,20}:{1}[A-Za-z0-9()]{1,20}){1}$");
+        return pattern.test(newstr)
+    }
+
 
     // region Attribute
     myDiagram.nodeTemplateMap.add("Attribute",
@@ -277,7 +282,8 @@ function init() {
                         margin: 8,
                         maxSize: new go.Size(160, NaN),
                         wrap: go.TextBlock.WrapFit,
-                        editable: true
+                        editable: true,
+                        textValidation: validateAttr
                     },
                     new go.Binding("text").makeTwoWay())
             ),
