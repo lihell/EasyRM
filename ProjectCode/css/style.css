@@ -13,7 +13,7 @@
 }
 
 .navbar {
-  background-color: #dfd7c1 !important;
+  background-color: #20283E !important;
 }
 
 
@@ -22,16 +22,16 @@
 }
 
 .navbar-nav li a {
-  color: #000000 !important;
+  color: white !important;
 }
 
 .navbar-nav  li .dropdown-menu .dropdown-item {
-  color: #dfd7c1 !important;
+  color: #20283E !important;
   transition: background-color 0.5s;
 }
 
 .navbar-nav  li .dropdown-menu .dropdown-item:hover {
-  background-color: #0f0700;
+  background-color: aliceblue;
   cursor: pointer;
 }
 
@@ -40,7 +40,7 @@
 }
 
 .navbar-nav li.nav-item:hover {
-  border-bottom: solid #000000 1px;
+  border-bottom: solid white 1px;
 }
 
 #exportSQLCol {
@@ -48,7 +48,7 @@
 }
 
 #popup{
-  background-color: #dfd7c1;
+  background-color: #20283E;
   width: 450px;
   padding: 30px 40px;
   position: absolute;
@@ -69,7 +69,7 @@
   margin-top: 30px;
   margin-left: 100px;
   margin-right: 100px;
-  background-color: #dfd7c1;
+  background-color: #20283E;
   min-height: 600px;
   position: absolute;
   transform: translate(-50%,-50%);
@@ -78,11 +78,11 @@
   border-radius: 8px;
   font-family: "Poppins",sans-serif;
   text-align: center;
-  color: #000000;
+  color: #ffffff;
   z-index: 2;
 }
 #sqlPopup{
-  background-color: #dfd7c1;
+  background-color: #20283E;
   width: 600px;
   padding: 30px 40px;
   position: absolute;
@@ -91,7 +91,7 @@
   top: 50%;
   border-radius: 8px;
   font-family: "Poppins",sans-serif;
-  color: #000000;
+  color: #ffffff;
   z-index: 2;
 }
 
@@ -100,7 +100,7 @@
   margin:  0 0 20px auto;
   background-color: transparent;
   font-size: 30px;
-  color: #000000 !important;
+  color: white !important;
   border: none;
   outline: none;
   cursor: pointer;
@@ -112,10 +112,10 @@
   text-align: justify;
   margin: 20px 0;
   line-height: 25px;
-  color:#000000;
+  color:#ffffff;
 }
 #popup h2{
-  color:#0f0000;
+  color:azure;
 }
 a{
   display: block;
@@ -123,8 +123,8 @@ a{
   position: relative;
   margin: 10px auto;
   text-align: center;
-  background-color: #ff951d;
-  color: #000000;
+  background-color: #006ae2;
+  color: #ffffff;
   text-decoration: none;
   padding: 5px 0;
 }
@@ -133,7 +133,7 @@ code{
 }
 
 #nameFilePopup {
-  background-color: #dfd7c1;
+  background-color: #20283E;
   width: 40vw;
   padding: 20px 30px;
   position: absolute;
@@ -142,7 +142,7 @@ code{
   top: 50%;
   border-radius: 8px;
   font-family: "Poppins",sans-serif;
-  color: #000000;
+  color: #ffffff;
   z-index: 2;
 }
 
@@ -160,7 +160,7 @@ code{
   height: 100vh;
   top: 0;
   position: absolute;
-  background-color: #cbc5bf;
+  background-color: #343a40;
   opacity: 0.8;
   z-index: 1;
 }
