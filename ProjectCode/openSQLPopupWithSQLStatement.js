@@ -5,7 +5,7 @@ function openSQLPopupWithSQLStatement() {
     let tableHTML = ""
     tables.forEach(table => {
 
-        tableHTML += "<b style='color:#000000 !important;'>" + table.name + "</b><table><tr>"
+        tableHTML += "<b>" + table.name + "</b><table><tr>"
         let primary = "";
         table.columns.forEach(column =>{
             if (column.name === "PRIMARY KEY"){
@@ -16,9 +16,9 @@ function openSQLPopupWithSQLStatement() {
         table.columns.forEach(column =>{
             if (column.name !== "PRIMARY KEY"){
                 if (("("+column.name+")") === primary){
-                    tableHTML += "<td style='border: 1.5px solid black;'>!" + column.name + "</td>"
+                    tableHTML += "<td>" + column.name + "</td>"
                 }else {
-                    tableHTML += "<td style='border: 1.5px solid black;'>" + column.name + "</td>"
+                    tableHTML += "<td>" + column.name + "</td>"
                 }
 
             }
@@ -27,7 +27,7 @@ function openSQLPopupWithSQLStatement() {
         tableHTML += "</tr><tr>"
         table.columns.forEach(column =>{
             if (column.name !== "PRIMARY KEY"){
-                tableHTML += "<td style='border: 1.5px solid black;'>" + column.dataType + "</td>"
+                tableHTML += "<td>" + column.dataType + "</td>"
             }
         })
         tableHTML += "</tr></table>"
