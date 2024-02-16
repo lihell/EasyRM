@@ -249,8 +249,7 @@ function init() {
             {
                 linkValidation: function (fromnode, fromport, tonode, toport) {
                     // total number of links connecting with all ports of a node is limited to 1:
-                    if (
-                        checkNodeCategoryType(fromnode, fromport, tonode, toport) &&
+                    return !!(checkNodeCategoryType(fromnode, fromport, tonode, toport) &&
                         (
                             (
                                 fromnode.category === "Attribute" &&
@@ -260,12 +259,7 @@ function init() {
                                 tonode.category === "Attribute" &&
                                 tonode.linksConnected.count < 1
                             )
-                        )
-                    ) {
-                        return true
-                    } else {
-                        return false
-                    }
+                        ));
                 }
             },
             $(go.Panel, "Spot", {name: "Attribute"},
@@ -344,28 +338,6 @@ function init() {
         //console.log(e)
     }
     // unused function? -> can this deleted
-    /*
-    function centerNodesVertically() {
-        // Get the viewport bounds
-        var viewBnds = myPalette.viewportBounds;
-
-        // Calculate the total height of the nodes
-        var totalHeight = 0;
-        myPalette.nodes.each(function(node) {
-            totalHeight += node.actualBounds.height;
-        });
-
-        // Calculate the offset needed to center the nodes
-        var yOffset = (viewBnds.height - totalHeight) / 2;
-
-        // Set the new locations for the nodes
-        var currentY = viewBnds.top;
-        myPalette.nodes.each(function(node) {
-            node.location = new go.Point(node.location.x, currentY + yOffset);
-            currentY += node.actualBounds.height;
-        });
-    }
-    */
     // temporary links used by LinkingTool and RelinkingTool are also orthogonal:
     myDiagram.toolManager.linkingTool.temporaryLink.routing = go.Link.Normal;
     myDiagram.toolManager.relinkingTool.temporaryLink.routing = go.Link.Normal;

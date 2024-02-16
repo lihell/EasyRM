@@ -38,7 +38,7 @@ function openSQLPopupWithSQLStatement() {
     //document.getElementById("SQLText").textContent = sqlStatement
     document.getElementById("SQLTables").innerHTML = tableHTML
     document.getElementById("SQLText").innerHTML = sqlStatement
-    myPopup4SQL('sqlPopup')
+    popupVisibility('sqlPopup')
     //throwGenericAlert(sqlStatement)
     console.log(tableHTML)
 }

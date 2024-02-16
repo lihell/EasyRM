@@ -11,8 +11,8 @@ function validateDiagram(validationType, specificValidationData, externalValidat
         throwGenericAlert(externalValidationEvent.ErrorMessage)
     }
 
-    var nodes = myDiagram.model.nodeDataArray;
-    var links = myDiagram.model.linkDataArray;
+    let nodes = myDiagram.model.nodeDataArray;
+    let links = myDiagram.model.linkDataArray;
 
     let validationEvent = {
         ValidationStatus: "Valid",

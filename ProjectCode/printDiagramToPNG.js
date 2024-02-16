@@ -1,12 +1,8 @@
 // print the diagram by opening a new window holding SVG images of the diagram contents for each page
 function printDiagramToPNG() {
 
-    var canvas = document.getElementById("myDiagramDiv").children[0];
+    let canvas = document.getElementById("myDiagramDiv").children[0];
     console.log(canvas)
-    //var canvas = document.getElementsByName("CanvasSurfaceContext");
-
-    //canvas.width = 200;
-    //canvas.height = 200;
 
     // Konvertieren des Canvas-Inhalts in PNG
     const pngImage = canvas.toDataURL("image/png");
@@ -19,16 +15,3 @@ function printDiagramToPNG() {
     link.click();
 
 }
-
-
-// var canvas = document.createElement("canvas");
-
-// canvas.width = 200;
-// canvas.height = 200;
-
-// var url = canvas.toDataURL();
-
-// var a = document.createElement('a');
-// a.download = 'my.png';
-// a.href = url;
-// a.textContent = 'Download PNG';
