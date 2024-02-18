@@ -1,16 +1,16 @@
 describe('getting started', () => {
   
   it('visit page', () => {
-    cy.visit('https://easyrmstorage.z6.web.core.windows.net/')
+    cy.visit('ProjectCode/html/EasyRM.html')
     // close welcome popup
-    cy.get('#popup > #close').click()
+    cy.get('#popup > .close').click()
     
   })
 
   it('help site', () => {
     cy.get(':nth-child(4) > .nav-link').click()
     cy.get('#helpPopup > h2').should('be.visible')
-    cy.get('#helpPopup > #close').click()
+    cy.get('#helpPopup > .close').click()
   })
 })
 
@@ -46,20 +46,59 @@ describe('export', () => {
 
 describe('finish', () => {
   it('convert into code', () => {
-    cy.get('.btn').click()
+    cy.get('#sql').click()
     cy.get('.col-10 > h2').should('not.be.empty')
   })
 
   it('back to start', () => {
-    cy.get('.col > #close').should('not.be.disabled').click()
+    cy.get('#closeSQL').click()
   })
 })
 
 describe('erm to sql', () => {
   it('convert', () => {
-    cy.get('.btn').click()
-    cy.get('.btn').click()
-    cy.get('WW')
+    cy.get('#sql').click()
+    cy.get('#export').click()
+    cy.get('#nameFilePopup').should('not.be.disabled')
+  })
+
+  it('back to start', () => {
+    cy.get('#closeNameFile').click()
+    cy.get('#closeSQL').click()
+  })
+})
+
+describe('popup background', () => {
+  it('when popup opened background should be disabled', () => {
+    cy.get('#sql').click()
+    cy.get('#containerBackgroundForPopup').should('be.visible')
+  })
+
+  it('back to start', () => {
+    cy.get('#closeSQL').click()
+  })
+})
+
+describe('download', () => {
+  it('sql', () => {
+    cy.get('#sql').click()
+    cy.get('#exportSQLCol > #export').click()
+    cy.get('#fileName').type('secondSQL')
+    cy.get('#downloadSQL').click()
+    cy.readFile('C:/Users/Lisa/Downloads/secondSQL.sql')
+  })
+
+  it('back to start', () => {
+    cy.get('#closeNameFile').click()
+    cy.get('#closeSQL').click()
+  })
+});
+
+describe('documentation', () => {
+  it('githubrepository', () => {
+    cy.get('#helpButton').click()
+    cy.get('#githublink').click()
+    cy.url()
   })
 })
 

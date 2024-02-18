@@ -77,12 +77,12 @@
                 </div>
             </li>
             <li class="nav-item">
-                <a class="nav-link" onclick="popupVisibility('helpPopup')" href="#" data-toggle="helpPopup" aria-haspopup="true"
+                <a class="nav-link" id="helpButton" onclick="popupVisibility('helpPopup')" href="#" data-toggle="helpPopup" aria-haspopup="true"
                    aria-expanded="false">Help</a>
 
             </li>
         </ul>
-        <button style="margin-right: 0; margin-left: auto" type="button" onclick="openSQLPopupWithSQLStatement()"
+        <button id="sql" style="margin-right: 0; margin-left: auto" type="button" onclick="openSQLPopupWithSQLStatement()"
                 class="btn btn-primary"><i class="bi bi-magic"></i> Convert to SQL
         </button>
     </div>
@@ -99,7 +99,7 @@
                 <h2 style="text-align: center">Your SQL Code</h2>
             </div>
             <div class="col">
-                <button class="close" onclick="popupVisibility('sqlPopup')">&times;</button>
+                <button class="close" id="closeSQL" onclick="popupVisibility('sqlPopup')">&times;</button>
             </div>
         </div>
         <div class="row">
@@ -115,8 +115,8 @@
             </div>
         </div>
         <div class="row">
-            <div class="col" id="exportSQLCol" onclick="popupVisibility('nameFilePopup')">
-                <button id="export" class="btn btn-primary">Export SQL</button>
+            <div class="col" id="exportSQLCol">
+                <button id="export" class="btn btn-primary" onclick="popupVisibility('nameFilePopup')">Export SQL</button>
             </div>
         </div>
     </div>
@@ -124,7 +124,7 @@
 
 <div id="nameFilePopup" class="isNotVisible">
     <div class="col">
-        <button class="close" onclick="popupVisibility('nameFilePopup')">&times;</button>
+        <button class="close" id="closeNameFile" onclick="popupVisibility('nameFilePopup')">&times;</button>
     </div>
     <h2>Name the File you want to download</h2>
     <form>
@@ -134,11 +134,11 @@
             <small id="helpFileType" class="form-text text-muted">Don't write the file ending</small>
         </div>
     </form>
-    <button class="btn btn-primary" onclick="printSQLStatementToTextFile()">Submit</button>
+    <button class="btn btn-primary" id="downloadSQL" onclick="printSQLStatementToTextFile()">Submit</button>
 </div>
 
 <div aria-labelledby="helpPopup" id="helpPopup" style="overflow:scroll" class="isNotVisible h50">
-    <button class="close" onclick="popupVisibility('helpPopup')">&times;</button>
+    <button class="close" id="closeHelp" onclick="popupVisibility('helpPopup')">&times;</button>
     <h2>You need help?</h2>
     <p><br>
         To create an ERM just place your Entities, Relations and Attributes via Drag'n'Drop into the Diagram.
@@ -213,7 +213,7 @@
     </ol>
     <h4>Are there more restrictions?</h4>
     If you want to know more about the ER Modell you find more information here:
-    <a href="#">Entity Relationship Model Wiki</a> <br>
+    <a href="https://github.com/lihell/EasyRm/tree/main" id="githublink">EasyRM Documentary in the GitHub-Repository README</a> <br>
     </p>
 </div>
 

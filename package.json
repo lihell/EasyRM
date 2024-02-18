@@ -2,7 +2,7 @@
     "scripts": {
         "cy:run": "cypress run"
     },
-    "dependencies": {
-        "cypress": "^12.5.1"
+    "devDependencies": {
+        "cypress": "^13.6.4"
     }
 }
