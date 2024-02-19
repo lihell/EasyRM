@@ -4,7 +4,7 @@ function loadJsonFromFile(files) {
     reader.onload = function() {
         console.log(reader.result)
         document.getElementById("mySavedModel").value = reader.result;
-        //myDiagram.model = go.Model.fromJson(document.getElementById("mySavedModel").value);
+
         const myJSON = JSON.parse(reader.result);
         myDiagram.model.nodeDataArray = myJSON.nodeDataArray
         myDiagram.model.linkDataArray = myJSON.linkDataArray

@@ -8,14 +8,14 @@ function printSQLStatementToTextFile() {
 }
 
 function createAndDownloadTextFile(content, fileName) {
-    var blob = new Blob([content], {
-        type: 'text/plain'
+    let blob = new Blob([content], {
+        type: 'application/sql'
     })
     let link = document.createElement("a");
     let url = URL.createObjectURL(blob);
 
     link.href = url;
-    link.download = fileName + '.txt';
+    link.download = fileName + '.sql';
     document.body.appendChild(link);
     link.click();
 

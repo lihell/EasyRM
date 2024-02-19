@@ -47,7 +47,7 @@
             integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
             crossorigin="anonymous"></script>
 </head>
-<body onload="myPopup('popup')">
+<body onload="popupVisibility('popup')">
 <nav class="navbar navbar-expand-lg navbar-dark">
     <a class="navbar-brand" href="#">
         <img src="../logo/logo.svg" width="135" height="35" class="d-inline-block align-top" alt="">
@@ -77,12 +77,12 @@
                 </div>
             </li>
             <li class="nav-item">
-                <a class="nav-link" onclick="myPopup4Help('helpPopup')" href="#" data-toggle="helpPopup" aria-haspopup="true"
+                <a class="nav-link" id="helpButton" onclick="popupVisibility('helpPopup')" href="#" data-toggle="helpPopup" aria-haspopup="true"
                    aria-expanded="false">Help</a>
 
             </li>
         </ul>
-        <button style="margin-right: 0; margin-left: auto" type="button" onclick="openSQLPopupWithSQLStatement()"
+        <button id="sql" style="margin-right: 0; margin-left: auto" type="button" onclick="openSQLPopupWithSQLStatement()"
                 class="btn btn-primary"><i class="bi bi-magic"></i> Convert to SQL
         </button>
     </div>
@@ -99,24 +99,24 @@
                 <h2 style="text-align: center">Your SQL Code</h2>
             </div>
             <div class="col">
-                <button class="close" onclick="myPopup4SQL('sqlPopup')">&times;</button>
+                <button class="close" id="closeSQL" onclick="popupVisibility('sqlPopup')">&times;</button>
             </div>
         </div>
         <div class="row">
             <div class="col-sm">
                 <div style="max-height: 400px; overflow: auto">
-                    <code  style="color:#000000; white-space: pre" id="SQLText"></code>
+                    <code  style="white-space: pre" id="SQLText"></code>
                 </div>
             </div>
             <div class="col-sm">
                 <div style="max-height: 400px; overflow: auto">
-                    <code  style="color:#000000; white-space: pre" id="SQLTables"></code>
+                    <code  style="white-space: pre" id="SQLTables"></code>
                 </div>
             </div>
         </div>
         <div class="row">
-            <div class="col" id="exportSQLCol" onclick="myPopup4Filename()">
-                <button id="export" class="btn btn-primary">Export SQL</button>
+            <div class="col" id="exportSQLCol">
+                <button id="export" class="btn btn-primary" onclick="popupVisibility('nameFilePopup')">Export SQL</button>
             </div>
         </div>
     </div>
@@ -124,7 +124,7 @@
 
 <div id="nameFilePopup" class="isNotVisible">
     <div class="col">
-        <button class="close" onclick="myPopup4Filename()">&times;</button>
+        <button class="close" id="closeNameFile" onclick="popupVisibility('nameFilePopup')">&times;</button>
     </div>
     <h2>Name the File you want to download</h2>
     <form>
@@ -134,11 +134,11 @@
             <small id="helpFileType" class="form-text text-muted">Don't write the file ending</small>
         </div>
     </form>
-    <button class="btn btn-primary" onclick="printSQLStatementToTextFile()">Submit</button>
+    <button class="btn btn-primary" id="downloadSQL" onclick="printSQLStatementToTextFile()">Submit</button>
 </div>
 
 <div aria-labelledby="helpPopup" id="helpPopup" style="overflow:scroll" class="isNotVisible h50">
-    <button class="close" onclick="myPopup4Help('helpPopup')">&times;</button>
+    <button class="close" id="closeHelp" onclick="popupVisibility('helpPopup')">&times;</button>
     <h2>You need help?</h2>
     <p><br>
         To create an ERM just place your Entities, Relations and Attributes via Drag'n'Drop into the Diagram.
@@ -213,12 +213,12 @@
     </ol>
     <h4>Are there more restrictions?</h4>
     If you want to know more about the ER Modell you find more information here:
-    <a href="#">Entity Relationship Model Wiki</a> <br>
+    <a href="https://github.com/lihell/EasyRm/tree/main" id="githublink">EasyRM Documentary in the GitHub-Repository README</a> <br>
     </p>
 </div>
 
 <div id="popup" class="isNotVisible">
-    <button class="close" onclick="myPopup('popup')">&times;</button>
+    <button class="close" onclick="popupVisibility('popup')">&times;</button>
     <h2>Welcome to EasyRM!</h2>
     <p>
         EasyRM is a free Software for creating ERM's. <br>
@@ -231,17 +231,13 @@
 
 
 
-<div id="diagramBody" class="diagramIsVisible" style="width: 100%; justify-content: space-between; height: 89vh; background-color: #F1F1F1">
-    <div id="myPaletteContainer" style="width: 20vw; height: 100%; display: flex; align-items: center">
+<div id="diagramBody" class="diagramIsVisible" style="width: 100%; justify-content: space-between; height: 92vh; background-color: #F1F1F1">
+    <div id="myPaletteContainer" style="width: 14vw; height: 100%; display: flex; align-items: center">
         <div id="myPaletteDiv" style="width: 100%; height: 100%"></div>
     </div>
     <div id="myDiagramContainer" style="width: 95vw; height: 100%; display: flex; align-content: center; align-items: center; flex-wrap: wrap; justify-content: center">
         <div class="container-fluid" id="myDiagramDiv" style="height: 88%; background-color: white;border-radius: 20px; margin-right: 5vw"></div>
     </div>
-    <!-- <div id="myPaletteDiv" style="width: 20vw; margin-right: 2px; background-color: #ffffff; border-right: black;"></div>
-    <div class="container-fluid" id="myDiagramDiv"
-         style="flex-grow: 1; height: 750px; background-color: #ffffff"></div>
-    </div> -->
 
 </div>
 <textarea id="mySavedModel" style="display: none">

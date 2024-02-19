@@ -12,5 +12,4 @@ function checkLinkMultiplicity(text) {
     }catch{
 
     }
-    return
 }

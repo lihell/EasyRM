@@ -29,7 +29,7 @@ function createJsonArrayFromModels() {
         //Prüfung on Relation zu Entity wird
 
         if (node.category === "Relation") {
- 
+
             let myLinks = []
             links.forEach(link => {
                 if (link.from === node.key || link.to === node.key) {
